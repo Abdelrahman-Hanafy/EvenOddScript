@@ -2,8 +2,7 @@
 
 read -p "Enter a number: " number
 
-if ((number & 1)); then
-    echo "The number is odd."
-else
-    echo "The number is even."
-fi
+case $((number % 2)) in
+    0) echo "The number is even." ;;
+    1) echo "The number is odd." ;;
+esac
