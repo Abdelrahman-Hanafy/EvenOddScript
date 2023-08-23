@@ -16,4 +16,11 @@ while true; do
         echo "Exiting the program."
         break
     fi
+
+    # Input validation
+    re='^[0-9]+$'
+    if ! [[ $input =~ $re ]]; then
+        echo "Error: Not a valid number."
+        continue
+    fi
 done
