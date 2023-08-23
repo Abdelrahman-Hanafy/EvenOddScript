@@ -1,8 +1,14 @@
 #!/bin/bash
 
+is_even_odd() {
+    if (( $1 % 2 == 0 )); then
+        echo "even"
+    else
+        echo "odd"
+    fi
+}
+
 read -p "Enter a number: " number
 
-case $((number % 2)) in
-    0) echo "The number is even." ;;
-    1) echo "The number is odd." ;;
-esac
+result=$(is_even_odd $number)
+echo "The number is $result."
