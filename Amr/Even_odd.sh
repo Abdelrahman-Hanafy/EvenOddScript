@@ -23,4 +23,16 @@ while true; do
         echo "Error: Not a valid number."
         continue
     fi
+
+    esult=$(is_even_odd "$input")
+
+    # Using a case statement for output
+    case $result in
+        even)
+            echo "The number is even."
+            ;;
+        odd)
+            echo "The number is odd."
+            ;;
+    esac
 done
