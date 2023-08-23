@@ -1,6 +1,6 @@
 function isEven()
 {
-	if [ $(( $1 % 2 )) -eq 0 ]
+	if [ $(( $1 & 1 )) -eq 0 ]
 	then
 		echo "$1 is Even"
 	else
