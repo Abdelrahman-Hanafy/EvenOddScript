@@ -8,6 +8,9 @@ is_even_odd() {
     fi
 }
 
+even_sum=0
+odd_sum=0
+
 while true; do
     read -p "Enter a number (or 'exit' to quit): " input
 
@@ -24,7 +27,14 @@ while true; do
         continue
     fi
 
-    esult=$(is_even_odd "$input")
+    result=$(is_even_odd "$input")
+
+    # Update sums
+    if [[ "$result" == "even" ]]; then
+        even_sum=$((even_sum + input))
+    else
+        odd_sum=$((odd_sum + input))
+    fi 
 
     # Using a case statement for output
     case $result in
@@ -35,4 +45,6 @@ while true; do
             echo "The number is odd."
             ;;
     esac
+    echo "sum of even numbers entered = " $even_sum
+    echo "sum of odd numbers entered = " $odd_sum
 done
