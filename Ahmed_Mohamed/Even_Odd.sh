@@ -9,8 +9,13 @@ function isEven()
 }
 
 
-echo "Enter a number: "
-
-read num
-
-isEven "$num"
+while true
+do
+	read -p "Enter the number: " num
+	isEven $num
+	read -p "Do you want to continue? (y/n) " choice
+	if [ $choice == "n" ]
+	then
+		break
+	fi
+done
